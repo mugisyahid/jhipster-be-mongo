@@ -5,24 +5,24 @@
       "nativeLanguage": "id"
     },
     "jhipsterVersion": "5.8.1",
-    "applicationType": "microservice",
-    "baseName": "jBE",
+    "applicationType": "gateway",
+    "baseName": "jhipster",
     "packageName": "com.ganteng.ligar",
     "packageFolder": "com/ganteng/ligar",
     "serverPort": "8081",
     "authenticationType": "jwt",
-    "cacheProvider": "hazelcast",
+    "cacheProvider": "ehcache",
     "enableHibernateCache": false,
-    "websocket": false,
+    "websocket": "spring-websocket",
     "databaseType": "mongodb",
     "devDatabaseType": "mongodb",
     "prodDatabaseType": "mongodb",
     "searchEngine": "elasticsearch",
     "messageBroker": "kafka",
-    "serviceDiscoveryType": "eureka",
+    "serviceDiscoveryType": false,
     "buildTool": "gradle",
     "enableSwaggerCodegen": true,
-    "jwtSecretKey": "OWRlMjRhOTZmMTE0YmZiOWMxNGYxNDI3ZWQ3N2NjMGIyODRiZWZlYTFjZTZkZjM2YTY1OGJkMDZmYTEzZjQ2MjUzOWM5ZGRmMjQ1OTVlNTc1ZmI5NTk0MjBlYjYxOWMwOTgxMDUyZDQ4ZmRiYmU4NTcyZWJkMDE3YTdmOGExZDU=",
+    "jwtSecretKey": "Mjk4MWY5OTIwMjRiOGM2MTA0MTNjNmM0NzdmYzAyOTUyYmI3ZTcyMWUzMDFmMmFiMTI2NjZkMWZjYzM1N2M4ZDQ3MDE3YzM2YjFkOGQ0ZjFjMWNiYTgwYzA1MzZiODU1Y2Y5Mjg5ZDNlYjBhYTEyYjEzNGYyYTc5YzM1OTZkNjg=",
     "testFrameworks": [
       "gatling",
       "cucumber"
@@ -143,7 +143,6 @@
       "id",
       "en"
     ],
-    "skipClient": true,
-    "skipUserManagement": true
+    "skipClient": true
   }
 }

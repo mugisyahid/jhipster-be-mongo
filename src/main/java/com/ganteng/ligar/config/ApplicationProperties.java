@@ -3,7 +3,7 @@ package com.ganteng.ligar.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Properties specific to J BE.
+ * Properties specific to Jhipster.
  * <p>
  * Properties are configured in the application.yml file.
  * See {@link io.github.jhipster.config.JHipsterProperties} for a good example.

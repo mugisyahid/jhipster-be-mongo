@@ -1,7 +1,7 @@
 {
-    "name": "j-be",
+    "name": "jhipster",
     "version": "0.0.0",
-    "description": "Description for jBE",
+    "description": "Description for jhipster",
     "private": true,
     "license": "UNLICENSED",
     "cacheDirectories": [

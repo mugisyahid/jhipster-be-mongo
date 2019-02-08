@@ -1,16 +1,16 @@
 version: '2'
 services:
-    jbe-mongodb:
+    jhipster-mongodb:
         image: mongo:4.0.2
         ports:
             - "27017:27017"
-        command: mongos --configdb jbe-mongodb-config
-    jbe-mongodb-node:
+        command: mongos --configdb jhipster-mongodb-config
+    jhipster-mongodb-node:
         build:
             context: .
             dockerfile: mongodb/MongoDB.Dockerfile
         command: mongod --replSet rs1 --noprealloc --smallfiles
-    jbe-mongodb-config:
+    jhipster-mongodb-config:
         image: mongo:4.0.2
-        container_name: jbe-mongodb-config
+        container_name: jhipster-mongodb-config
         command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db

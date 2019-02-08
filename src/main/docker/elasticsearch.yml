@@ -1,9 +1,9 @@
 version: '2'
 services:
-    jbe-elasticsearch:
+    jhipster-elasticsearch:
         image: elasticsearch:5.6.13
         # volumes:
-        #     - ~/volumes/jhipster/jBE/elasticsearch/:/usr/share/elasticsearch/data/
+        #     - ~/volumes/jhipster/jhipster/elasticsearch/:/usr/share/elasticsearch/data/
         ports:
             - 9200:9200
             - 9300:9300

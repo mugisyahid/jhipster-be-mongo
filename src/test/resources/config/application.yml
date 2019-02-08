@@ -13,16 +13,10 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-eureka:
-    client:
-        enabled: false
-    instance:
-        appname: jBE
-        instanceId: jBE:${spring.application.instance-id:${random.value}}
 
 spring:
     application:
-        name: jBE
+        name: jhipster
     cache:
         type: simple
     cloud:
@@ -38,7 +32,7 @@ spring:
         mongodb:
             host: localhost
             port: 0
-            database: jBE
+            database: jhipster
         elasticsearch:
             properties:
                 path:
@@ -76,11 +70,14 @@ jhipster:
             host: localhost
             port: 5000
             queue-size: 512
+    mail:
+        from: test@localhost
+        base-url: http://127.0.0.1:8080
     security:
         authentication:
             jwt:
                 # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-                base64-secret: OWRlMjRhOTZmMTE0YmZiOWMxNGYxNDI3ZWQ3N2NjMGIyODRiZWZlYTFjZTZkZjM2YTY1OGJkMDZmYTEzZjQ2MjUzOWM5ZGRmMjQ1OTVlNTc1ZmI5NTk0MjBlYjYxOWMwOTgxMDUyZDQ4ZmRiYmU4NTcyZWJkMDE3YTdmOGExZDU=
+                base64-secret: Mjk4MWY5OTIwMjRiOGM2MTA0MTNjNmM0NzdmYzAyOTUyYmI3ZTcyMWUzMDFmMmFiMTI2NjZkMWZjYzM1N2M4ZDQ3MDE3YzM2YjFkOGQ0ZjFjMWNiYTgwYzA1MzZiODU1Y2Y5Mjg5ZDNlYjBhYTEyYjEzNGYyYTc5YzM1OTZkNjg=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics:

@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
@@ -22,19 +21,18 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableConfigurationProperties({ApplicationProperties.class})
-@EnableDiscoveryClient
-public class JBeApp {
+public class JhipsterApp {
 
-    private static final Logger log = LoggerFactory.getLogger(JBeApp.class);
+    private static final Logger log = LoggerFactory.getLogger(JhipsterApp.class);
 
     private final Environment env;
 
-    public JBeApp(Environment env) {
+    public JhipsterApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes jBE.
+     * Initializes jhipster.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -59,7 +57,7 @@ public class JBeApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(JBeApp.class);
+        SpringApplication app = new SpringApplication(JhipsterApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);
@@ -95,12 +93,5 @@ public class JBeApp {
             serverPort,
             contextPath,
             env.getActiveProfiles());
-
-        String configServerStatus = env.getProperty("configserver.status");
-        if (configServerStatus == null) {
-            configServerStatus = "Not found or not setup for this application";
-        }
-        log.info("\n----------------------------------------------------------\n\t" +
-                "Config Server: \t{}\n----------------------------------------------------------", configServerStatus);
     }
 }
