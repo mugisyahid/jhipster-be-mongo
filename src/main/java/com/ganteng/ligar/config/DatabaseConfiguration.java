@@ -64,6 +64,6 @@ public class DatabaseConfiguration {
         mongobee.setMongoTemplate(mongoTemplate);
         // package to scan for migrations
         mongobee.setChangeLogsScanPackage("com.ganteng.ligar.config.dbmigrations");
-        mongobee.setEnabled(true);
+        mongobee.setEnabled(true); // migration flag, false -> migration won't start
         return mongobee;
     }}
