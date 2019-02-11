@@ -2,6 +2,7 @@ package com.ganteng.ligar.config.dbmigrations;
 
 import com.ganteng.ligar.domain.Authority;
 import com.ganteng.ligar.domain.User;
+import com.ganteng.ligar.domain.store.Store;
 import com.ganteng.ligar.security.AuthoritiesConstants;
 
 import com.github.mongobee.changeset.ChangeLog;
@@ -89,5 +90,22 @@ public class InitialSetupMigration {
         userUser.setCreatedDate(Instant.now());
         userUser.getAuthorities().add(userAuthority);
         mongoTemplate.save(userUser);
+
+
+        // add store
+        Store store = new Store();
+        store.setStoreName("system user store");
+        store.setStoreOwner(systemUser.getId());
+        mongoTemplate.save(store);
+
+        store = new Store();
+        store.setStoreName("admin store");
+        store.setStoreOwner(adminUser.getId());
+        mongoTemplate.save(store);
+
+        store = new Store();
+        store.setStoreName("user store");
+        store.setStoreOwner(userUser.getId());
+        mongoTemplate.save(store);
     }
 }
